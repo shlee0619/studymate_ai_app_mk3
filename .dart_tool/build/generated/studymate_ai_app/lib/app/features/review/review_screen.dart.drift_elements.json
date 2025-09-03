@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:flutter/material.dart","transitive":false},{"uri":"package:flutter_riverpod/flutter_riverpod.dart","transitive":false},{"uri":"package:studymate_ai_app/app/core/di/providers.dart","transitive":false},{"uri":"package:studymate_ai_app/app/domain/repositories.dart","transitive":false}],"elements":[]}

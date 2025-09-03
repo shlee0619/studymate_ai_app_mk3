@@ -1,0 +1,2556 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'local_db.dart';
+
+// ignore_for_file: type=lint
+class $ItemsTable extends Items with TableInfo<$ItemsTable, ItemRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ItemsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+      'id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _stemMeta = const VerificationMeta('stem');
+  @override
+  late final GeneratedColumn<String> stem = GeneratedColumn<String>(
+      'stem', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _optionsJsonMeta =
+      const VerificationMeta('optionsJson');
+  @override
+  late final GeneratedColumn<String> optionsJson = GeneratedColumn<String>(
+      'options_json', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _answerIndexMeta =
+      const VerificationMeta('answerIndex');
+  @override
+  late final GeneratedColumn<int> answerIndex = GeneratedColumn<int>(
+      'answer_index', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  static const VerificationMeta _conceptIdMeta =
+      const VerificationMeta('conceptId');
+  @override
+  late final GeneratedColumn<String> conceptId = GeneratedColumn<String>(
+      'concept_id', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _difficultyMeta =
+      const VerificationMeta('difficulty');
+  @override
+  late final GeneratedColumn<double> difficulty = GeneratedColumn<double>(
+      'difficulty', aliasedName, false,
+      type: DriftSqlType.double,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(0.5));
+  static const VerificationMeta _sourceRefMeta =
+      const VerificationMeta('sourceRef');
+  @override
+  late final GeneratedColumn<String> sourceRef = GeneratedColumn<String>(
+      'source_ref', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _efMeta = const VerificationMeta('ef');
+  @override
+  late final GeneratedColumn<double> ef = GeneratedColumn<double>(
+      'ef', aliasedName, false,
+      type: DriftSqlType.double,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(2.5));
+  static const VerificationMeta _intervalDaysMeta =
+      const VerificationMeta('intervalDays');
+  @override
+  late final GeneratedColumn<int> intervalDays = GeneratedColumn<int>(
+      'interval_days', aliasedName, false,
+      type: DriftSqlType.int,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(0));
+  static const VerificationMeta _repsMeta = const VerificationMeta('reps');
+  @override
+  late final GeneratedColumn<int> reps = GeneratedColumn<int>(
+      'reps', aliasedName, false,
+      type: DriftSqlType.int,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(0));
+  static const VerificationMeta _nextReviewMeta =
+      const VerificationMeta('nextReview');
+  @override
+  late final GeneratedColumn<DateTime> nextReview = GeneratedColumn<DateTime>(
+      'next_review', aliasedName, true,
+      type: DriftSqlType.dateTime, requiredDuringInsert: false);
+  @override
+  List<GeneratedColumn> get $columns => [
+        id,
+        stem,
+        optionsJson,
+        answerIndex,
+        conceptId,
+        difficulty,
+        sourceRef,
+        ef,
+        intervalDays,
+        reps,
+        nextReview
+      ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'items';
+  @override
+  VerificationContext validateIntegrity(Insertable<ItemRow> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('stem')) {
+      context.handle(
+          _stemMeta, stem.isAcceptableOrUnknown(data['stem']!, _stemMeta));
+    } else if (isInserting) {
+      context.missing(_stemMeta);
+    }
+    if (data.containsKey('options_json')) {
+      context.handle(
+          _optionsJsonMeta,
+          optionsJson.isAcceptableOrUnknown(
+              data['options_json']!, _optionsJsonMeta));
+    } else if (isInserting) {
+      context.missing(_optionsJsonMeta);
+    }
+    if (data.containsKey('answer_index')) {
+      context.handle(
+          _answerIndexMeta,
+          answerIndex.isAcceptableOrUnknown(
+              data['answer_index']!, _answerIndexMeta));
+    } else if (isInserting) {
+      context.missing(_answerIndexMeta);
+    }
+    if (data.containsKey('concept_id')) {
+      context.handle(_conceptIdMeta,
+          conceptId.isAcceptableOrUnknown(data['concept_id']!, _conceptIdMeta));
+    }
+    if (data.containsKey('difficulty')) {
+      context.handle(
+          _difficultyMeta,
+          difficulty.isAcceptableOrUnknown(
+              data['difficulty']!, _difficultyMeta));
+    }
+    if (data.containsKey('source_ref')) {
+      context.handle(_sourceRefMeta,
+          sourceRef.isAcceptableOrUnknown(data['source_ref']!, _sourceRefMeta));
+    }
+    if (data.containsKey('ef')) {
+      context.handle(_efMeta, ef.isAcceptableOrUnknown(data['ef']!, _efMeta));
+    }
+    if (data.containsKey('interval_days')) {
+      context.handle(
+          _intervalDaysMeta,
+          intervalDays.isAcceptableOrUnknown(
+              data['interval_days']!, _intervalDaysMeta));
+    }
+    if (data.containsKey('reps')) {
+      context.handle(
+          _repsMeta, reps.isAcceptableOrUnknown(data['reps']!, _repsMeta));
+    }
+    if (data.containsKey('next_review')) {
+      context.handle(
+          _nextReviewMeta,
+          nextReview.isAcceptableOrUnknown(
+              data['next_review']!, _nextReviewMeta));
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ItemRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ItemRow(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
+      stem: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}stem'])!,
+      optionsJson: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}options_json'])!,
+      answerIndex: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}answer_index'])!,
+      conceptId: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}concept_id']),
+      difficulty: attachedDatabase.typeMapping
+          .read(DriftSqlType.double, data['${effectivePrefix}difficulty'])!,
+      sourceRef: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}source_ref']),
+      ef: attachedDatabase.typeMapping
+          .read(DriftSqlType.double, data['${effectivePrefix}ef'])!,
+      intervalDays: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}interval_days'])!,
+      reps: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}reps'])!,
+      nextReview: attachedDatabase.typeMapping
+          .read(DriftSqlType.dateTime, data['${effectivePrefix}next_review']),
+    );
+  }
+
+  @override
+  $ItemsTable createAlias(String alias) {
+    return $ItemsTable(attachedDatabase, alias);
+  }
+}
+
+class ItemRow extends DataClass implements Insertable<ItemRow> {
+  final String id;
+  final String stem;
+  final String optionsJson;
+  final int answerIndex;
+  final String? conceptId;
+  final double difficulty;
+  final String? sourceRef;
+  final double ef;
+  final int intervalDays;
+  final int reps;
+  final DateTime? nextReview;
+  const ItemRow(
+      {required this.id,
+      required this.stem,
+      required this.optionsJson,
+      required this.answerIndex,
+      this.conceptId,
+      required this.difficulty,
+      this.sourceRef,
+      required this.ef,
+      required this.intervalDays,
+      required this.reps,
+      this.nextReview});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['stem'] = Variable<String>(stem);
+    map['options_json'] = Variable<String>(optionsJson);
+    map['answer_index'] = Variable<int>(answerIndex);
+    if (!nullToAbsent || conceptId != null) {
+      map['concept_id'] = Variable<String>(conceptId);
+    }
+    map['difficulty'] = Variable<double>(difficulty);
+    if (!nullToAbsent || sourceRef != null) {
+      map['source_ref'] = Variable<String>(sourceRef);
+    }
+    map['ef'] = Variable<double>(ef);
+    map['interval_days'] = Variable<int>(intervalDays);
+    map['reps'] = Variable<int>(reps);
+    if (!nullToAbsent || nextReview != null) {
+      map['next_review'] = Variable<DateTime>(nextReview);
+    }
+    return map;
+  }
+
+  ItemsCompanion toCompanion(bool nullToAbsent) {
+    return ItemsCompanion(
+      id: Value(id),
+      stem: Value(stem),
+      optionsJson: Value(optionsJson),
+      answerIndex: Value(answerIndex),
+      conceptId: conceptId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(conceptId),
+      difficulty: Value(difficulty),
+      sourceRef: sourceRef == null && nullToAbsent
+          ? const Value.absent()
+          : Value(sourceRef),
+      ef: Value(ef),
+      intervalDays: Value(intervalDays),
+      reps: Value(reps),
+      nextReview: nextReview == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nextReview),
+    );
+  }
+
+  factory ItemRow.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ItemRow(
+      id: serializer.fromJson<String>(json['id']),
+      stem: serializer.fromJson<String>(json['stem']),
+      optionsJson: serializer.fromJson<String>(json['optionsJson']),
+      answerIndex: serializer.fromJson<int>(json['answerIndex']),
+      conceptId: serializer.fromJson<String?>(json['conceptId']),
+      difficulty: serializer.fromJson<double>(json['difficulty']),
+      sourceRef: serializer.fromJson<String?>(json['sourceRef']),
+      ef: serializer.fromJson<double>(json['ef']),
+      intervalDays: serializer.fromJson<int>(json['intervalDays']),
+      reps: serializer.fromJson<int>(json['reps']),
+      nextReview: serializer.fromJson<DateTime?>(json['nextReview']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'stem': serializer.toJson<String>(stem),
+      'optionsJson': serializer.toJson<String>(optionsJson),
+      'answerIndex': serializer.toJson<int>(answerIndex),
+      'conceptId': serializer.toJson<String?>(conceptId),
+      'difficulty': serializer.toJson<double>(difficulty),
+      'sourceRef': serializer.toJson<String?>(sourceRef),
+      'ef': serializer.toJson<double>(ef),
+      'intervalDays': serializer.toJson<int>(intervalDays),
+      'reps': serializer.toJson<int>(reps),
+      'nextReview': serializer.toJson<DateTime?>(nextReview),
+    };
+  }
+
+  ItemRow copyWith(
+          {String? id,
+          String? stem,
+          String? optionsJson,
+          int? answerIndex,
+          Value<String?> conceptId = const Value.absent(),
+          double? difficulty,
+          Value<String?> sourceRef = const Value.absent(),
+          double? ef,
+          int? intervalDays,
+          int? reps,
+          Value<DateTime?> nextReview = const Value.absent()}) =>
+      ItemRow(
+        id: id ?? this.id,
+        stem: stem ?? this.stem,
+        optionsJson: optionsJson ?? this.optionsJson,
+        answerIndex: answerIndex ?? this.answerIndex,
+        conceptId: conceptId.present ? conceptId.value : this.conceptId,
+        difficulty: difficulty ?? this.difficulty,
+        sourceRef: sourceRef.present ? sourceRef.value : this.sourceRef,
+        ef: ef ?? this.ef,
+        intervalDays: intervalDays ?? this.intervalDays,
+        reps: reps ?? this.reps,
+        nextReview: nextReview.present ? nextReview.value : this.nextReview,
+      );
+  ItemRow copyWithCompanion(ItemsCompanion data) {
+    return ItemRow(
+      id: data.id.present ? data.id.value : this.id,
+      stem: data.stem.present ? data.stem.value : this.stem,
+      optionsJson:
+          data.optionsJson.present ? data.optionsJson.value : this.optionsJson,
+      answerIndex:
+          data.answerIndex.present ? data.answerIndex.value : this.answerIndex,
+      conceptId: data.conceptId.present ? data.conceptId.value : this.conceptId,
+      difficulty:
+          data.difficulty.present ? data.difficulty.value : this.difficulty,
+      sourceRef: data.sourceRef.present ? data.sourceRef.value : this.sourceRef,
+      ef: data.ef.present ? data.ef.value : this.ef,
+      intervalDays: data.intervalDays.present
+          ? data.intervalDays.value
+          : this.intervalDays,
+      reps: data.reps.present ? data.reps.value : this.reps,
+      nextReview:
+          data.nextReview.present ? data.nextReview.value : this.nextReview,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ItemRow(')
+          ..write('id: $id, ')
+          ..write('stem: $stem, ')
+          ..write('optionsJson: $optionsJson, ')
+          ..write('answerIndex: $answerIndex, ')
+          ..write('conceptId: $conceptId, ')
+          ..write('difficulty: $difficulty, ')
+          ..write('sourceRef: $sourceRef, ')
+          ..write('ef: $ef, ')
+          ..write('intervalDays: $intervalDays, ')
+          ..write('reps: $reps, ')
+          ..write('nextReview: $nextReview')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, stem, optionsJson, answerIndex, conceptId,
+      difficulty, sourceRef, ef, intervalDays, reps, nextReview);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ItemRow &&
+          other.id == this.id &&
+          other.stem == this.stem &&
+          other.optionsJson == this.optionsJson &&
+          other.answerIndex == this.answerIndex &&
+          other.conceptId == this.conceptId &&
+          other.difficulty == this.difficulty &&
+          other.sourceRef == this.sourceRef &&
+          other.ef == this.ef &&
+          other.intervalDays == this.intervalDays &&
+          other.reps == this.reps &&
+          other.nextReview == this.nextReview);
+}
+
+class ItemsCompanion extends UpdateCompanion<ItemRow> {
+  final Value<String> id;
+  final Value<String> stem;
+  final Value<String> optionsJson;
+  final Value<int> answerIndex;
+  final Value<String?> conceptId;
+  final Value<double> difficulty;
+  final Value<String?> sourceRef;
+  final Value<double> ef;
+  final Value<int> intervalDays;
+  final Value<int> reps;
+  final Value<DateTime?> nextReview;
+  final Value<int> rowid;
+  const ItemsCompanion({
+    this.id = const Value.absent(),
+    this.stem = const Value.absent(),
+    this.optionsJson = const Value.absent(),
+    this.answerIndex = const Value.absent(),
+    this.conceptId = const Value.absent(),
+    this.difficulty = const Value.absent(),
+    this.sourceRef = const Value.absent(),
+    this.ef = const Value.absent(),
+    this.intervalDays = const Value.absent(),
+    this.reps = const Value.absent(),
+    this.nextReview = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ItemsCompanion.insert({
+    required String id,
+    required String stem,
+    required String optionsJson,
+    required int answerIndex,
+    this.conceptId = const Value.absent(),
+    this.difficulty = const Value.absent(),
+    this.sourceRef = const Value.absent(),
+    this.ef = const Value.absent(),
+    this.intervalDays = const Value.absent(),
+    this.reps = const Value.absent(),
+    this.nextReview = const Value.absent(),
+    this.rowid = const Value.absent(),
+  })  : id = Value(id),
+        stem = Value(stem),
+        optionsJson = Value(optionsJson),
+        answerIndex = Value(answerIndex);
+  static Insertable<ItemRow> custom({
+    Expression<String>? id,
+    Expression<String>? stem,
+    Expression<String>? optionsJson,
+    Expression<int>? answerIndex,
+    Expression<String>? conceptId,
+    Expression<double>? difficulty,
+    Expression<String>? sourceRef,
+    Expression<double>? ef,
+    Expression<int>? intervalDays,
+    Expression<int>? reps,
+    Expression<DateTime>? nextReview,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (stem != null) 'stem': stem,
+      if (optionsJson != null) 'options_json': optionsJson,
+      if (answerIndex != null) 'answer_index': answerIndex,
+      if (conceptId != null) 'concept_id': conceptId,
+      if (difficulty != null) 'difficulty': difficulty,
+      if (sourceRef != null) 'source_ref': sourceRef,
+      if (ef != null) 'ef': ef,
+      if (intervalDays != null) 'interval_days': intervalDays,
+      if (reps != null) 'reps': reps,
+      if (nextReview != null) 'next_review': nextReview,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ItemsCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? stem,
+      Value<String>? optionsJson,
+      Value<int>? answerIndex,
+      Value<String?>? conceptId,
+      Value<double>? difficulty,
+      Value<String?>? sourceRef,
+      Value<double>? ef,
+      Value<int>? intervalDays,
+      Value<int>? reps,
+      Value<DateTime?>? nextReview,
+      Value<int>? rowid}) {
+    return ItemsCompanion(
+      id: id ?? this.id,
+      stem: stem ?? this.stem,
+      optionsJson: optionsJson ?? this.optionsJson,
+      answerIndex: answerIndex ?? this.answerIndex,
+      conceptId: conceptId ?? this.conceptId,
+      difficulty: difficulty ?? this.difficulty,
+      sourceRef: sourceRef ?? this.sourceRef,
+      ef: ef ?? this.ef,
+      intervalDays: intervalDays ?? this.intervalDays,
+      reps: reps ?? this.reps,
+      nextReview: nextReview ?? this.nextReview,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (stem.present) {
+      map['stem'] = Variable<String>(stem.value);
+    }
+    if (optionsJson.present) {
+      map['options_json'] = Variable<String>(optionsJson.value);
+    }
+    if (answerIndex.present) {
+      map['answer_index'] = Variable<int>(answerIndex.value);
+    }
+    if (conceptId.present) {
+      map['concept_id'] = Variable<String>(conceptId.value);
+    }
+    if (difficulty.present) {
+      map['difficulty'] = Variable<double>(difficulty.value);
+    }
+    if (sourceRef.present) {
+      map['source_ref'] = Variable<String>(sourceRef.value);
+    }
+    if (ef.present) {
+      map['ef'] = Variable<double>(ef.value);
+    }
+    if (intervalDays.present) {
+      map['interval_days'] = Variable<int>(intervalDays.value);
+    }
+    if (reps.present) {
+      map['reps'] = Variable<int>(reps.value);
+    }
+    if (nextReview.present) {
+      map['next_review'] = Variable<DateTime>(nextReview.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ItemsCompanion(')
+          ..write('id: $id, ')
+          ..write('stem: $stem, ')
+          ..write('optionsJson: $optionsJson, ')
+          ..write('answerIndex: $answerIndex, ')
+          ..write('conceptId: $conceptId, ')
+          ..write('difficulty: $difficulty, ')
+          ..write('sourceRef: $sourceRef, ')
+          ..write('ef: $ef, ')
+          ..write('intervalDays: $intervalDays, ')
+          ..write('reps: $reps, ')
+          ..write('nextReview: $nextReview, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $AttemptsTable extends Attempts
+    with TableInfo<$AttemptsTable, AttemptRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AttemptsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+      'id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _itemIdMeta = const VerificationMeta('itemId');
+  @override
+  late final GeneratedColumn<String> itemId = GeneratedColumn<String>(
+      'item_id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _correctMeta =
+      const VerificationMeta('correct');
+  @override
+  late final GeneratedColumn<bool> correct = GeneratedColumn<bool>(
+      'correct', aliasedName, false,
+      type: DriftSqlType.bool,
+      requiredDuringInsert: true,
+      defaultConstraints:
+          GeneratedColumn.constraintIsAlways('CHECK ("correct" IN (0, 1))'));
+  static const VerificationMeta _latencyMsMeta =
+      const VerificationMeta('latencyMs');
+  @override
+  late final GeneratedColumn<int> latencyMs = GeneratedColumn<int>(
+      'latency_ms', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  static const VerificationMeta _confidenceMeta =
+      const VerificationMeta('confidence');
+  @override
+  late final GeneratedColumn<double> confidence = GeneratedColumn<double>(
+      'confidence', aliasedName, false,
+      type: DriftSqlType.double, requiredDuringInsert: true);
+  static const VerificationMeta _errorTagIdsJsonMeta =
+      const VerificationMeta('errorTagIdsJson');
+  @override
+  late final GeneratedColumn<String> errorTagIdsJson = GeneratedColumn<String>(
+      'error_tag_ids_json', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant('[]'));
+  static const VerificationMeta _createdAtMeta =
+      const VerificationMeta('createdAt');
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+      'created_at', aliasedName, false,
+      type: DriftSqlType.dateTime, requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns =>
+      [id, itemId, correct, latencyMs, confidence, errorTagIdsJson, createdAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'attempts';
+  @override
+  VerificationContext validateIntegrity(Insertable<AttemptRow> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('item_id')) {
+      context.handle(_itemIdMeta,
+          itemId.isAcceptableOrUnknown(data['item_id']!, _itemIdMeta));
+    } else if (isInserting) {
+      context.missing(_itemIdMeta);
+    }
+    if (data.containsKey('correct')) {
+      context.handle(_correctMeta,
+          correct.isAcceptableOrUnknown(data['correct']!, _correctMeta));
+    } else if (isInserting) {
+      context.missing(_correctMeta);
+    }
+    if (data.containsKey('latency_ms')) {
+      context.handle(_latencyMsMeta,
+          latencyMs.isAcceptableOrUnknown(data['latency_ms']!, _latencyMsMeta));
+    } else if (isInserting) {
+      context.missing(_latencyMsMeta);
+    }
+    if (data.containsKey('confidence')) {
+      context.handle(
+          _confidenceMeta,
+          confidence.isAcceptableOrUnknown(
+              data['confidence']!, _confidenceMeta));
+    } else if (isInserting) {
+      context.missing(_confidenceMeta);
+    }
+    if (data.containsKey('error_tag_ids_json')) {
+      context.handle(
+          _errorTagIdsJsonMeta,
+          errorTagIdsJson.isAcceptableOrUnknown(
+              data['error_tag_ids_json']!, _errorTagIdsJsonMeta));
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(_createdAtMeta,
+          createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta));
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  AttemptRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return AttemptRow(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
+      itemId: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}item_id'])!,
+      correct: attachedDatabase.typeMapping
+          .read(DriftSqlType.bool, data['${effectivePrefix}correct'])!,
+      latencyMs: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}latency_ms'])!,
+      confidence: attachedDatabase.typeMapping
+          .read(DriftSqlType.double, data['${effectivePrefix}confidence'])!,
+      errorTagIdsJson: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}error_tag_ids_json'])!,
+      createdAt: attachedDatabase.typeMapping
+          .read(DriftSqlType.dateTime, data['${effectivePrefix}created_at'])!,
+    );
+  }
+
+  @override
+  $AttemptsTable createAlias(String alias) {
+    return $AttemptsTable(attachedDatabase, alias);
+  }
+}
+
+class AttemptRow extends DataClass implements Insertable<AttemptRow> {
+  final String id;
+  final String itemId;
+  final bool correct;
+  final int latencyMs;
+  final double confidence;
+  final String errorTagIdsJson;
+  final DateTime createdAt;
+  const AttemptRow(
+      {required this.id,
+      required this.itemId,
+      required this.correct,
+      required this.latencyMs,
+      required this.confidence,
+      required this.errorTagIdsJson,
+      required this.createdAt});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['item_id'] = Variable<String>(itemId);
+    map['correct'] = Variable<bool>(correct);
+    map['latency_ms'] = Variable<int>(latencyMs);
+    map['confidence'] = Variable<double>(confidence);
+    map['error_tag_ids_json'] = Variable<String>(errorTagIdsJson);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  AttemptsCompanion toCompanion(bool nullToAbsent) {
+    return AttemptsCompanion(
+      id: Value(id),
+      itemId: Value(itemId),
+      correct: Value(correct),
+      latencyMs: Value(latencyMs),
+      confidence: Value(confidence),
+      errorTagIdsJson: Value(errorTagIdsJson),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory AttemptRow.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AttemptRow(
+      id: serializer.fromJson<String>(json['id']),
+      itemId: serializer.fromJson<String>(json['itemId']),
+      correct: serializer.fromJson<bool>(json['correct']),
+      latencyMs: serializer.fromJson<int>(json['latencyMs']),
+      confidence: serializer.fromJson<double>(json['confidence']),
+      errorTagIdsJson: serializer.fromJson<String>(json['errorTagIdsJson']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'itemId': serializer.toJson<String>(itemId),
+      'correct': serializer.toJson<bool>(correct),
+      'latencyMs': serializer.toJson<int>(latencyMs),
+      'confidence': serializer.toJson<double>(confidence),
+      'errorTagIdsJson': serializer.toJson<String>(errorTagIdsJson),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  AttemptRow copyWith(
+          {String? id,
+          String? itemId,
+          bool? correct,
+          int? latencyMs,
+          double? confidence,
+          String? errorTagIdsJson,
+          DateTime? createdAt}) =>
+      AttemptRow(
+        id: id ?? this.id,
+        itemId: itemId ?? this.itemId,
+        correct: correct ?? this.correct,
+        latencyMs: latencyMs ?? this.latencyMs,
+        confidence: confidence ?? this.confidence,
+        errorTagIdsJson: errorTagIdsJson ?? this.errorTagIdsJson,
+        createdAt: createdAt ?? this.createdAt,
+      );
+  AttemptRow copyWithCompanion(AttemptsCompanion data) {
+    return AttemptRow(
+      id: data.id.present ? data.id.value : this.id,
+      itemId: data.itemId.present ? data.itemId.value : this.itemId,
+      correct: data.correct.present ? data.correct.value : this.correct,
+      latencyMs: data.latencyMs.present ? data.latencyMs.value : this.latencyMs,
+      confidence:
+          data.confidence.present ? data.confidence.value : this.confidence,
+      errorTagIdsJson: data.errorTagIdsJson.present
+          ? data.errorTagIdsJson.value
+          : this.errorTagIdsJson,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AttemptRow(')
+          ..write('id: $id, ')
+          ..write('itemId: $itemId, ')
+          ..write('correct: $correct, ')
+          ..write('latencyMs: $latencyMs, ')
+          ..write('confidence: $confidence, ')
+          ..write('errorTagIdsJson: $errorTagIdsJson, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      id, itemId, correct, latencyMs, confidence, errorTagIdsJson, createdAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AttemptRow &&
+          other.id == this.id &&
+          other.itemId == this.itemId &&
+          other.correct == this.correct &&
+          other.latencyMs == this.latencyMs &&
+          other.confidence == this.confidence &&
+          other.errorTagIdsJson == this.errorTagIdsJson &&
+          other.createdAt == this.createdAt);
+}
+
+class AttemptsCompanion extends UpdateCompanion<AttemptRow> {
+  final Value<String> id;
+  final Value<String> itemId;
+  final Value<bool> correct;
+  final Value<int> latencyMs;
+  final Value<double> confidence;
+  final Value<String> errorTagIdsJson;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const AttemptsCompanion({
+    this.id = const Value.absent(),
+    this.itemId = const Value.absent(),
+    this.correct = const Value.absent(),
+    this.latencyMs = const Value.absent(),
+    this.confidence = const Value.absent(),
+    this.errorTagIdsJson = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  AttemptsCompanion.insert({
+    required String id,
+    required String itemId,
+    required bool correct,
+    required int latencyMs,
+    required double confidence,
+    this.errorTagIdsJson = const Value.absent(),
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  })  : id = Value(id),
+        itemId = Value(itemId),
+        correct = Value(correct),
+        latencyMs = Value(latencyMs),
+        confidence = Value(confidence),
+        createdAt = Value(createdAt);
+  static Insertable<AttemptRow> custom({
+    Expression<String>? id,
+    Expression<String>? itemId,
+    Expression<bool>? correct,
+    Expression<int>? latencyMs,
+    Expression<double>? confidence,
+    Expression<String>? errorTagIdsJson,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (itemId != null) 'item_id': itemId,
+      if (correct != null) 'correct': correct,
+      if (latencyMs != null) 'latency_ms': latencyMs,
+      if (confidence != null) 'confidence': confidence,
+      if (errorTagIdsJson != null) 'error_tag_ids_json': errorTagIdsJson,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  AttemptsCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? itemId,
+      Value<bool>? correct,
+      Value<int>? latencyMs,
+      Value<double>? confidence,
+      Value<String>? errorTagIdsJson,
+      Value<DateTime>? createdAt,
+      Value<int>? rowid}) {
+    return AttemptsCompanion(
+      id: id ?? this.id,
+      itemId: itemId ?? this.itemId,
+      correct: correct ?? this.correct,
+      latencyMs: latencyMs ?? this.latencyMs,
+      confidence: confidence ?? this.confidence,
+      errorTagIdsJson: errorTagIdsJson ?? this.errorTagIdsJson,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (itemId.present) {
+      map['item_id'] = Variable<String>(itemId.value);
+    }
+    if (correct.present) {
+      map['correct'] = Variable<bool>(correct.value);
+    }
+    if (latencyMs.present) {
+      map['latency_ms'] = Variable<int>(latencyMs.value);
+    }
+    if (confidence.present) {
+      map['confidence'] = Variable<double>(confidence.value);
+    }
+    if (errorTagIdsJson.present) {
+      map['error_tag_ids_json'] = Variable<String>(errorTagIdsJson.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AttemptsCompanion(')
+          ..write('id: $id, ')
+          ..write('itemId: $itemId, ')
+          ..write('correct: $correct, ')
+          ..write('latencyMs: $latencyMs, ')
+          ..write('confidence: $confidence, ')
+          ..write('errorTagIdsJson: $errorTagIdsJson, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $ErrorTagsTable extends ErrorTags
+    with TableInfo<$ErrorTagsTable, ErrorTagRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ErrorTagsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+      'id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+      'name', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _patternMeta =
+      const VerificationMeta('pattern');
+  @override
+  late final GeneratedColumn<String> pattern = GeneratedColumn<String>(
+      'pattern', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _notesMeta = const VerificationMeta('notes');
+  @override
+  late final GeneratedColumn<String> notes = GeneratedColumn<String>(
+      'notes', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  @override
+  List<GeneratedColumn> get $columns => [id, name, pattern, notes];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'error_tags';
+  @override
+  VerificationContext validateIntegrity(Insertable<ErrorTagRow> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('pattern')) {
+      context.handle(_patternMeta,
+          pattern.isAcceptableOrUnknown(data['pattern']!, _patternMeta));
+    }
+    if (data.containsKey('notes')) {
+      context.handle(
+          _notesMeta, notes.isAcceptableOrUnknown(data['notes']!, _notesMeta));
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ErrorTagRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ErrorTagRow(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
+      name: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}name'])!,
+      pattern: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}pattern']),
+      notes: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}notes']),
+    );
+  }
+
+  @override
+  $ErrorTagsTable createAlias(String alias) {
+    return $ErrorTagsTable(attachedDatabase, alias);
+  }
+}
+
+class ErrorTagRow extends DataClass implements Insertable<ErrorTagRow> {
+  final String id;
+  final String name;
+  final String? pattern;
+  final String? notes;
+  const ErrorTagRow(
+      {required this.id, required this.name, this.pattern, this.notes});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['name'] = Variable<String>(name);
+    if (!nullToAbsent || pattern != null) {
+      map['pattern'] = Variable<String>(pattern);
+    }
+    if (!nullToAbsent || notes != null) {
+      map['notes'] = Variable<String>(notes);
+    }
+    return map;
+  }
+
+  ErrorTagsCompanion toCompanion(bool nullToAbsent) {
+    return ErrorTagsCompanion(
+      id: Value(id),
+      name: Value(name),
+      pattern: pattern == null && nullToAbsent
+          ? const Value.absent()
+          : Value(pattern),
+      notes:
+          notes == null && nullToAbsent ? const Value.absent() : Value(notes),
+    );
+  }
+
+  factory ErrorTagRow.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ErrorTagRow(
+      id: serializer.fromJson<String>(json['id']),
+      name: serializer.fromJson<String>(json['name']),
+      pattern: serializer.fromJson<String?>(json['pattern']),
+      notes: serializer.fromJson<String?>(json['notes']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'name': serializer.toJson<String>(name),
+      'pattern': serializer.toJson<String?>(pattern),
+      'notes': serializer.toJson<String?>(notes),
+    };
+  }
+
+  ErrorTagRow copyWith(
+          {String? id,
+          String? name,
+          Value<String?> pattern = const Value.absent(),
+          Value<String?> notes = const Value.absent()}) =>
+      ErrorTagRow(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        pattern: pattern.present ? pattern.value : this.pattern,
+        notes: notes.present ? notes.value : this.notes,
+      );
+  ErrorTagRow copyWithCompanion(ErrorTagsCompanion data) {
+    return ErrorTagRow(
+      id: data.id.present ? data.id.value : this.id,
+      name: data.name.present ? data.name.value : this.name,
+      pattern: data.pattern.present ? data.pattern.value : this.pattern,
+      notes: data.notes.present ? data.notes.value : this.notes,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ErrorTagRow(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('pattern: $pattern, ')
+          ..write('notes: $notes')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, name, pattern, notes);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ErrorTagRow &&
+          other.id == this.id &&
+          other.name == this.name &&
+          other.pattern == this.pattern &&
+          other.notes == this.notes);
+}
+
+class ErrorTagsCompanion extends UpdateCompanion<ErrorTagRow> {
+  final Value<String> id;
+  final Value<String> name;
+  final Value<String?> pattern;
+  final Value<String?> notes;
+  final Value<int> rowid;
+  const ErrorTagsCompanion({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    this.pattern = const Value.absent(),
+    this.notes = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ErrorTagsCompanion.insert({
+    required String id,
+    required String name,
+    this.pattern = const Value.absent(),
+    this.notes = const Value.absent(),
+    this.rowid = const Value.absent(),
+  })  : id = Value(id),
+        name = Value(name);
+  static Insertable<ErrorTagRow> custom({
+    Expression<String>? id,
+    Expression<String>? name,
+    Expression<String>? pattern,
+    Expression<String>? notes,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (pattern != null) 'pattern': pattern,
+      if (notes != null) 'notes': notes,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ErrorTagsCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? name,
+      Value<String?>? pattern,
+      Value<String?>? notes,
+      Value<int>? rowid}) {
+    return ErrorTagsCompanion(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      pattern: pattern ?? this.pattern,
+      notes: notes ?? this.notes,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (pattern.present) {
+      map['pattern'] = Variable<String>(pattern.value);
+    }
+    if (notes.present) {
+      map['notes'] = Variable<String>(notes.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ErrorTagsCompanion(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('pattern: $pattern, ')
+          ..write('notes: $notes, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $ConceptsTable extends Concepts
+    with TableInfo<$ConceptsTable, ConceptRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ConceptsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+      'id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _titleMeta = const VerificationMeta('title');
+  @override
+  late final GeneratedColumn<String> title = GeneratedColumn<String>(
+      'title', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _prereqIdsJsonMeta =
+      const VerificationMeta('prereqIdsJson');
+  @override
+  late final GeneratedColumn<String> prereqIdsJson = GeneratedColumn<String>(
+      'prereq_ids_json', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant('[]'));
+  static const VerificationMeta _masteryMeta =
+      const VerificationMeta('mastery');
+  @override
+  late final GeneratedColumn<double> mastery = GeneratedColumn<double>(
+      'mastery', aliasedName, false,
+      type: DriftSqlType.double,
+      requiredDuringInsert: false,
+      defaultValue: const Constant(0.0));
+  @override
+  List<GeneratedColumn> get $columns => [id, title, prereqIdsJson, mastery];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'concepts';
+  @override
+  VerificationContext validateIntegrity(Insertable<ConceptRow> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('title')) {
+      context.handle(
+          _titleMeta, title.isAcceptableOrUnknown(data['title']!, _titleMeta));
+    } else if (isInserting) {
+      context.missing(_titleMeta);
+    }
+    if (data.containsKey('prereq_ids_json')) {
+      context.handle(
+          _prereqIdsJsonMeta,
+          prereqIdsJson.isAcceptableOrUnknown(
+              data['prereq_ids_json']!, _prereqIdsJsonMeta));
+    }
+    if (data.containsKey('mastery')) {
+      context.handle(_masteryMeta,
+          mastery.isAcceptableOrUnknown(data['mastery']!, _masteryMeta));
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ConceptRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ConceptRow(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
+      title: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}title'])!,
+      prereqIdsJson: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}prereq_ids_json'])!,
+      mastery: attachedDatabase.typeMapping
+          .read(DriftSqlType.double, data['${effectivePrefix}mastery'])!,
+    );
+  }
+
+  @override
+  $ConceptsTable createAlias(String alias) {
+    return $ConceptsTable(attachedDatabase, alias);
+  }
+}
+
+class ConceptRow extends DataClass implements Insertable<ConceptRow> {
+  final String id;
+  final String title;
+  final String prereqIdsJson;
+  final double mastery;
+  const ConceptRow(
+      {required this.id,
+      required this.title,
+      required this.prereqIdsJson,
+      required this.mastery});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['title'] = Variable<String>(title);
+    map['prereq_ids_json'] = Variable<String>(prereqIdsJson);
+    map['mastery'] = Variable<double>(mastery);
+    return map;
+  }
+
+  ConceptsCompanion toCompanion(bool nullToAbsent) {
+    return ConceptsCompanion(
+      id: Value(id),
+      title: Value(title),
+      prereqIdsJson: Value(prereqIdsJson),
+      mastery: Value(mastery),
+    );
+  }
+
+  factory ConceptRow.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ConceptRow(
+      id: serializer.fromJson<String>(json['id']),
+      title: serializer.fromJson<String>(json['title']),
+      prereqIdsJson: serializer.fromJson<String>(json['prereqIdsJson']),
+      mastery: serializer.fromJson<double>(json['mastery']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'title': serializer.toJson<String>(title),
+      'prereqIdsJson': serializer.toJson<String>(prereqIdsJson),
+      'mastery': serializer.toJson<double>(mastery),
+    };
+  }
+
+  ConceptRow copyWith(
+          {String? id,
+          String? title,
+          String? prereqIdsJson,
+          double? mastery}) =>
+      ConceptRow(
+        id: id ?? this.id,
+        title: title ?? this.title,
+        prereqIdsJson: prereqIdsJson ?? this.prereqIdsJson,
+        mastery: mastery ?? this.mastery,
+      );
+  ConceptRow copyWithCompanion(ConceptsCompanion data) {
+    return ConceptRow(
+      id: data.id.present ? data.id.value : this.id,
+      title: data.title.present ? data.title.value : this.title,
+      prereqIdsJson: data.prereqIdsJson.present
+          ? data.prereqIdsJson.value
+          : this.prereqIdsJson,
+      mastery: data.mastery.present ? data.mastery.value : this.mastery,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ConceptRow(')
+          ..write('id: $id, ')
+          ..write('title: $title, ')
+          ..write('prereqIdsJson: $prereqIdsJson, ')
+          ..write('mastery: $mastery')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, title, prereqIdsJson, mastery);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ConceptRow &&
+          other.id == this.id &&
+          other.title == this.title &&
+          other.prereqIdsJson == this.prereqIdsJson &&
+          other.mastery == this.mastery);
+}
+
+class ConceptsCompanion extends UpdateCompanion<ConceptRow> {
+  final Value<String> id;
+  final Value<String> title;
+  final Value<String> prereqIdsJson;
+  final Value<double> mastery;
+  final Value<int> rowid;
+  const ConceptsCompanion({
+    this.id = const Value.absent(),
+    this.title = const Value.absent(),
+    this.prereqIdsJson = const Value.absent(),
+    this.mastery = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ConceptsCompanion.insert({
+    required String id,
+    required String title,
+    this.prereqIdsJson = const Value.absent(),
+    this.mastery = const Value.absent(),
+    this.rowid = const Value.absent(),
+  })  : id = Value(id),
+        title = Value(title);
+  static Insertable<ConceptRow> custom({
+    Expression<String>? id,
+    Expression<String>? title,
+    Expression<String>? prereqIdsJson,
+    Expression<double>? mastery,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (title != null) 'title': title,
+      if (prereqIdsJson != null) 'prereq_ids_json': prereqIdsJson,
+      if (mastery != null) 'mastery': mastery,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ConceptsCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? title,
+      Value<String>? prereqIdsJson,
+      Value<double>? mastery,
+      Value<int>? rowid}) {
+    return ConceptsCompanion(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      prereqIdsJson: prereqIdsJson ?? this.prereqIdsJson,
+      mastery: mastery ?? this.mastery,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (title.present) {
+      map['title'] = Variable<String>(title.value);
+    }
+    if (prereqIdsJson.present) {
+      map['prereq_ids_json'] = Variable<String>(prereqIdsJson.value);
+    }
+    if (mastery.present) {
+      map['mastery'] = Variable<double>(mastery.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ConceptsCompanion(')
+          ..write('id: $id, ')
+          ..write('title: $title, ')
+          ..write('prereqIdsJson: $prereqIdsJson, ')
+          ..write('mastery: $mastery, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $EvidencesTable extends Evidences
+    with TableInfo<$EvidencesTable, EvidenceRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $EvidencesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+      'id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _itemIdMeta = const VerificationMeta('itemId');
+  @override
+  late final GeneratedColumn<String> itemId = GeneratedColumn<String>(
+      'item_id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _sourceUriMeta =
+      const VerificationMeta('sourceUri');
+  @override
+  late final GeneratedColumn<String> sourceUri = GeneratedColumn<String>(
+      'source_uri', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _snippetMeta =
+      const VerificationMeta('snippet');
+  @override
+  late final GeneratedColumn<String> snippet = GeneratedColumn<String>(
+      'snippet', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _offsetsJsonMeta =
+      const VerificationMeta('offsetsJson');
+  @override
+  late final GeneratedColumn<String> offsetsJson = GeneratedColumn<String>(
+      'offsets_json', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns =>
+      [id, itemId, sourceUri, snippet, offsetsJson];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'evidences';
+  @override
+  VerificationContext validateIntegrity(Insertable<EvidenceRow> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('item_id')) {
+      context.handle(_itemIdMeta,
+          itemId.isAcceptableOrUnknown(data['item_id']!, _itemIdMeta));
+    } else if (isInserting) {
+      context.missing(_itemIdMeta);
+    }
+    if (data.containsKey('source_uri')) {
+      context.handle(_sourceUriMeta,
+          sourceUri.isAcceptableOrUnknown(data['source_uri']!, _sourceUriMeta));
+    } else if (isInserting) {
+      context.missing(_sourceUriMeta);
+    }
+    if (data.containsKey('snippet')) {
+      context.handle(_snippetMeta,
+          snippet.isAcceptableOrUnknown(data['snippet']!, _snippetMeta));
+    } else if (isInserting) {
+      context.missing(_snippetMeta);
+    }
+    if (data.containsKey('offsets_json')) {
+      context.handle(
+          _offsetsJsonMeta,
+          offsetsJson.isAcceptableOrUnknown(
+              data['offsets_json']!, _offsetsJsonMeta));
+    } else if (isInserting) {
+      context.missing(_offsetsJsonMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  EvidenceRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return EvidenceRow(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
+      itemId: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}item_id'])!,
+      sourceUri: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}source_uri'])!,
+      snippet: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}snippet'])!,
+      offsetsJson: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}offsets_json'])!,
+    );
+  }
+
+  @override
+  $EvidencesTable createAlias(String alias) {
+    return $EvidencesTable(attachedDatabase, alias);
+  }
+}
+
+class EvidenceRow extends DataClass implements Insertable<EvidenceRow> {
+  final String id;
+  final String itemId;
+  final String sourceUri;
+  final String snippet;
+  final String offsetsJson;
+  const EvidenceRow(
+      {required this.id,
+      required this.itemId,
+      required this.sourceUri,
+      required this.snippet,
+      required this.offsetsJson});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['item_id'] = Variable<String>(itemId);
+    map['source_uri'] = Variable<String>(sourceUri);
+    map['snippet'] = Variable<String>(snippet);
+    map['offsets_json'] = Variable<String>(offsetsJson);
+    return map;
+  }
+
+  EvidencesCompanion toCompanion(bool nullToAbsent) {
+    return EvidencesCompanion(
+      id: Value(id),
+      itemId: Value(itemId),
+      sourceUri: Value(sourceUri),
+      snippet: Value(snippet),
+      offsetsJson: Value(offsetsJson),
+    );
+  }
+
+  factory EvidenceRow.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return EvidenceRow(
+      id: serializer.fromJson<String>(json['id']),
+      itemId: serializer.fromJson<String>(json['itemId']),
+      sourceUri: serializer.fromJson<String>(json['sourceUri']),
+      snippet: serializer.fromJson<String>(json['snippet']),
+      offsetsJson: serializer.fromJson<String>(json['offsetsJson']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'itemId': serializer.toJson<String>(itemId),
+      'sourceUri': serializer.toJson<String>(sourceUri),
+      'snippet': serializer.toJson<String>(snippet),
+      'offsetsJson': serializer.toJson<String>(offsetsJson),
+    };
+  }
+
+  EvidenceRow copyWith(
+          {String? id,
+          String? itemId,
+          String? sourceUri,
+          String? snippet,
+          String? offsetsJson}) =>
+      EvidenceRow(
+        id: id ?? this.id,
+        itemId: itemId ?? this.itemId,
+        sourceUri: sourceUri ?? this.sourceUri,
+        snippet: snippet ?? this.snippet,
+        offsetsJson: offsetsJson ?? this.offsetsJson,
+      );
+  EvidenceRow copyWithCompanion(EvidencesCompanion data) {
+    return EvidenceRow(
+      id: data.id.present ? data.id.value : this.id,
+      itemId: data.itemId.present ? data.itemId.value : this.itemId,
+      sourceUri: data.sourceUri.present ? data.sourceUri.value : this.sourceUri,
+      snippet: data.snippet.present ? data.snippet.value : this.snippet,
+      offsetsJson:
+          data.offsetsJson.present ? data.offsetsJson.value : this.offsetsJson,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('EvidenceRow(')
+          ..write('id: $id, ')
+          ..write('itemId: $itemId, ')
+          ..write('sourceUri: $sourceUri, ')
+          ..write('snippet: $snippet, ')
+          ..write('offsetsJson: $offsetsJson')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, itemId, sourceUri, snippet, offsetsJson);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is EvidenceRow &&
+          other.id == this.id &&
+          other.itemId == this.itemId &&
+          other.sourceUri == this.sourceUri &&
+          other.snippet == this.snippet &&
+          other.offsetsJson == this.offsetsJson);
+}
+
+class EvidencesCompanion extends UpdateCompanion<EvidenceRow> {
+  final Value<String> id;
+  final Value<String> itemId;
+  final Value<String> sourceUri;
+  final Value<String> snippet;
+  final Value<String> offsetsJson;
+  final Value<int> rowid;
+  const EvidencesCompanion({
+    this.id = const Value.absent(),
+    this.itemId = const Value.absent(),
+    this.sourceUri = const Value.absent(),
+    this.snippet = const Value.absent(),
+    this.offsetsJson = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  EvidencesCompanion.insert({
+    required String id,
+    required String itemId,
+    required String sourceUri,
+    required String snippet,
+    required String offsetsJson,
+    this.rowid = const Value.absent(),
+  })  : id = Value(id),
+        itemId = Value(itemId),
+        sourceUri = Value(sourceUri),
+        snippet = Value(snippet),
+        offsetsJson = Value(offsetsJson);
+  static Insertable<EvidenceRow> custom({
+    Expression<String>? id,
+    Expression<String>? itemId,
+    Expression<String>? sourceUri,
+    Expression<String>? snippet,
+    Expression<String>? offsetsJson,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (itemId != null) 'item_id': itemId,
+      if (sourceUri != null) 'source_uri': sourceUri,
+      if (snippet != null) 'snippet': snippet,
+      if (offsetsJson != null) 'offsets_json': offsetsJson,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  EvidencesCompanion copyWith(
+      {Value<String>? id,
+      Value<String>? itemId,
+      Value<String>? sourceUri,
+      Value<String>? snippet,
+      Value<String>? offsetsJson,
+      Value<int>? rowid}) {
+    return EvidencesCompanion(
+      id: id ?? this.id,
+      itemId: itemId ?? this.itemId,
+      sourceUri: sourceUri ?? this.sourceUri,
+      snippet: snippet ?? this.snippet,
+      offsetsJson: offsetsJson ?? this.offsetsJson,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (itemId.present) {
+      map['item_id'] = Variable<String>(itemId.value);
+    }
+    if (sourceUri.present) {
+      map['source_uri'] = Variable<String>(sourceUri.value);
+    }
+    if (snippet.present) {
+      map['snippet'] = Variable<String>(snippet.value);
+    }
+    if (offsetsJson.present) {
+      map['offsets_json'] = Variable<String>(offsetsJson.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('EvidencesCompanion(')
+          ..write('id: $id, ')
+          ..write('itemId: $itemId, ')
+          ..write('sourceUri: $sourceUri, ')
+          ..write('snippet: $snippet, ')
+          ..write('offsetsJson: $offsetsJson, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+abstract class _$LocalDb extends GeneratedDatabase {
+  _$LocalDb(QueryExecutor e) : super(e);
+  $LocalDbManager get managers => $LocalDbManager(this);
+  late final $ItemsTable items = $ItemsTable(this);
+  late final $AttemptsTable attempts = $AttemptsTable(this);
+  late final $ErrorTagsTable errorTags = $ErrorTagsTable(this);
+  late final $ConceptsTable concepts = $ConceptsTable(this);
+  late final $EvidencesTable evidences = $EvidencesTable(this);
+  @override
+  Iterable<TableInfo<Table, Object?>> get allTables =>
+      allSchemaEntities.whereType<TableInfo<Table, Object?>>();
+  @override
+  List<DatabaseSchemaEntity> get allSchemaEntities =>
+      [items, attempts, errorTags, concepts, evidences];
+}
+
+typedef $$ItemsTableCreateCompanionBuilder = ItemsCompanion Function({
+  required String id,
+  required String stem,
+  required String optionsJson,
+  required int answerIndex,
+  Value<String?> conceptId,
+  Value<double> difficulty,
+  Value<String?> sourceRef,
+  Value<double> ef,
+  Value<int> intervalDays,
+  Value<int> reps,
+  Value<DateTime?> nextReview,
+  Value<int> rowid,
+});
+typedef $$ItemsTableUpdateCompanionBuilder = ItemsCompanion Function({
+  Value<String> id,
+  Value<String> stem,
+  Value<String> optionsJson,
+  Value<int> answerIndex,
+  Value<String?> conceptId,
+  Value<double> difficulty,
+  Value<String?> sourceRef,
+  Value<double> ef,
+  Value<int> intervalDays,
+  Value<int> reps,
+  Value<DateTime?> nextReview,
+  Value<int> rowid,
+});
+
+class $$ItemsTableTableManager extends RootTableManager<
+    _$LocalDb,
+    $ItemsTable,
+    ItemRow,
+    $$ItemsTableFilterComposer,
+    $$ItemsTableOrderingComposer,
+    $$ItemsTableCreateCompanionBuilder,
+    $$ItemsTableUpdateCompanionBuilder> {
+  $$ItemsTableTableManager(_$LocalDb db, $ItemsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$ItemsTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$ItemsTableOrderingComposer(ComposerState(db, table)),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> stem = const Value.absent(),
+            Value<String> optionsJson = const Value.absent(),
+            Value<int> answerIndex = const Value.absent(),
+            Value<String?> conceptId = const Value.absent(),
+            Value<double> difficulty = const Value.absent(),
+            Value<String?> sourceRef = const Value.absent(),
+            Value<double> ef = const Value.absent(),
+            Value<int> intervalDays = const Value.absent(),
+            Value<int> reps = const Value.absent(),
+            Value<DateTime?> nextReview = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ItemsCompanion(
+            id: id,
+            stem: stem,
+            optionsJson: optionsJson,
+            answerIndex: answerIndex,
+            conceptId: conceptId,
+            difficulty: difficulty,
+            sourceRef: sourceRef,
+            ef: ef,
+            intervalDays: intervalDays,
+            reps: reps,
+            nextReview: nextReview,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String stem,
+            required String optionsJson,
+            required int answerIndex,
+            Value<String?> conceptId = const Value.absent(),
+            Value<double> difficulty = const Value.absent(),
+            Value<String?> sourceRef = const Value.absent(),
+            Value<double> ef = const Value.absent(),
+            Value<int> intervalDays = const Value.absent(),
+            Value<int> reps = const Value.absent(),
+            Value<DateTime?> nextReview = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ItemsCompanion.insert(
+            id: id,
+            stem: stem,
+            optionsJson: optionsJson,
+            answerIndex: answerIndex,
+            conceptId: conceptId,
+            difficulty: difficulty,
+            sourceRef: sourceRef,
+            ef: ef,
+            intervalDays: intervalDays,
+            reps: reps,
+            nextReview: nextReview,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$ItemsTableFilterComposer
+    extends FilterComposer<_$LocalDb, $ItemsTable> {
+  $$ItemsTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get stem => $state.composableBuilder(
+      column: $state.table.stem,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get optionsJson => $state.composableBuilder(
+      column: $state.table.optionsJson,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<int> get answerIndex => $state.composableBuilder(
+      column: $state.table.answerIndex,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get conceptId => $state.composableBuilder(
+      column: $state.table.conceptId,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<double> get difficulty => $state.composableBuilder(
+      column: $state.table.difficulty,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get sourceRef => $state.composableBuilder(
+      column: $state.table.sourceRef,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<double> get ef => $state.composableBuilder(
+      column: $state.table.ef,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<int> get intervalDays => $state.composableBuilder(
+      column: $state.table.intervalDays,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<int> get reps => $state.composableBuilder(
+      column: $state.table.reps,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get nextReview => $state.composableBuilder(
+      column: $state.table.nextReview,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$ItemsTableOrderingComposer
+    extends OrderingComposer<_$LocalDb, $ItemsTable> {
+  $$ItemsTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get stem => $state.composableBuilder(
+      column: $state.table.stem,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get optionsJson => $state.composableBuilder(
+      column: $state.table.optionsJson,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<int> get answerIndex => $state.composableBuilder(
+      column: $state.table.answerIndex,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get conceptId => $state.composableBuilder(
+      column: $state.table.conceptId,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<double> get difficulty => $state.composableBuilder(
+      column: $state.table.difficulty,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get sourceRef => $state.composableBuilder(
+      column: $state.table.sourceRef,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<double> get ef => $state.composableBuilder(
+      column: $state.table.ef,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<int> get intervalDays => $state.composableBuilder(
+      column: $state.table.intervalDays,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<int> get reps => $state.composableBuilder(
+      column: $state.table.reps,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get nextReview => $state.composableBuilder(
+      column: $state.table.nextReview,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+typedef $$AttemptsTableCreateCompanionBuilder = AttemptsCompanion Function({
+  required String id,
+  required String itemId,
+  required bool correct,
+  required int latencyMs,
+  required double confidence,
+  Value<String> errorTagIdsJson,
+  required DateTime createdAt,
+  Value<int> rowid,
+});
+typedef $$AttemptsTableUpdateCompanionBuilder = AttemptsCompanion Function({
+  Value<String> id,
+  Value<String> itemId,
+  Value<bool> correct,
+  Value<int> latencyMs,
+  Value<double> confidence,
+  Value<String> errorTagIdsJson,
+  Value<DateTime> createdAt,
+  Value<int> rowid,
+});
+
+class $$AttemptsTableTableManager extends RootTableManager<
+    _$LocalDb,
+    $AttemptsTable,
+    AttemptRow,
+    $$AttemptsTableFilterComposer,
+    $$AttemptsTableOrderingComposer,
+    $$AttemptsTableCreateCompanionBuilder,
+    $$AttemptsTableUpdateCompanionBuilder> {
+  $$AttemptsTableTableManager(_$LocalDb db, $AttemptsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$AttemptsTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$AttemptsTableOrderingComposer(ComposerState(db, table)),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> itemId = const Value.absent(),
+            Value<bool> correct = const Value.absent(),
+            Value<int> latencyMs = const Value.absent(),
+            Value<double> confidence = const Value.absent(),
+            Value<String> errorTagIdsJson = const Value.absent(),
+            Value<DateTime> createdAt = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              AttemptsCompanion(
+            id: id,
+            itemId: itemId,
+            correct: correct,
+            latencyMs: latencyMs,
+            confidence: confidence,
+            errorTagIdsJson: errorTagIdsJson,
+            createdAt: createdAt,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String itemId,
+            required bool correct,
+            required int latencyMs,
+            required double confidence,
+            Value<String> errorTagIdsJson = const Value.absent(),
+            required DateTime createdAt,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              AttemptsCompanion.insert(
+            id: id,
+            itemId: itemId,
+            correct: correct,
+            latencyMs: latencyMs,
+            confidence: confidence,
+            errorTagIdsJson: errorTagIdsJson,
+            createdAt: createdAt,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$AttemptsTableFilterComposer
+    extends FilterComposer<_$LocalDb, $AttemptsTable> {
+  $$AttemptsTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get itemId => $state.composableBuilder(
+      column: $state.table.itemId,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<bool> get correct => $state.composableBuilder(
+      column: $state.table.correct,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<int> get latencyMs => $state.composableBuilder(
+      column: $state.table.latencyMs,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<double> get confidence => $state.composableBuilder(
+      column: $state.table.confidence,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get errorTagIdsJson => $state.composableBuilder(
+      column: $state.table.errorTagIdsJson,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<DateTime> get createdAt => $state.composableBuilder(
+      column: $state.table.createdAt,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$AttemptsTableOrderingComposer
+    extends OrderingComposer<_$LocalDb, $AttemptsTable> {
+  $$AttemptsTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get itemId => $state.composableBuilder(
+      column: $state.table.itemId,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<bool> get correct => $state.composableBuilder(
+      column: $state.table.correct,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<int> get latencyMs => $state.composableBuilder(
+      column: $state.table.latencyMs,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<double> get confidence => $state.composableBuilder(
+      column: $state.table.confidence,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get errorTagIdsJson => $state.composableBuilder(
+      column: $state.table.errorTagIdsJson,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<DateTime> get createdAt => $state.composableBuilder(
+      column: $state.table.createdAt,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+typedef $$ErrorTagsTableCreateCompanionBuilder = ErrorTagsCompanion Function({
+  required String id,
+  required String name,
+  Value<String?> pattern,
+  Value<String?> notes,
+  Value<int> rowid,
+});
+typedef $$ErrorTagsTableUpdateCompanionBuilder = ErrorTagsCompanion Function({
+  Value<String> id,
+  Value<String> name,
+  Value<String?> pattern,
+  Value<String?> notes,
+  Value<int> rowid,
+});
+
+class $$ErrorTagsTableTableManager extends RootTableManager<
+    _$LocalDb,
+    $ErrorTagsTable,
+    ErrorTagRow,
+    $$ErrorTagsTableFilterComposer,
+    $$ErrorTagsTableOrderingComposer,
+    $$ErrorTagsTableCreateCompanionBuilder,
+    $$ErrorTagsTableUpdateCompanionBuilder> {
+  $$ErrorTagsTableTableManager(_$LocalDb db, $ErrorTagsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$ErrorTagsTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$ErrorTagsTableOrderingComposer(ComposerState(db, table)),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> name = const Value.absent(),
+            Value<String?> pattern = const Value.absent(),
+            Value<String?> notes = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ErrorTagsCompanion(
+            id: id,
+            name: name,
+            pattern: pattern,
+            notes: notes,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String name,
+            Value<String?> pattern = const Value.absent(),
+            Value<String?> notes = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ErrorTagsCompanion.insert(
+            id: id,
+            name: name,
+            pattern: pattern,
+            notes: notes,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$ErrorTagsTableFilterComposer
+    extends FilterComposer<_$LocalDb, $ErrorTagsTable> {
+  $$ErrorTagsTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get pattern => $state.composableBuilder(
+      column: $state.table.pattern,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get notes => $state.composableBuilder(
+      column: $state.table.notes,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$ErrorTagsTableOrderingComposer
+    extends OrderingComposer<_$LocalDb, $ErrorTagsTable> {
+  $$ErrorTagsTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get name => $state.composableBuilder(
+      column: $state.table.name,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get pattern => $state.composableBuilder(
+      column: $state.table.pattern,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get notes => $state.composableBuilder(
+      column: $state.table.notes,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+typedef $$ConceptsTableCreateCompanionBuilder = ConceptsCompanion Function({
+  required String id,
+  required String title,
+  Value<String> prereqIdsJson,
+  Value<double> mastery,
+  Value<int> rowid,
+});
+typedef $$ConceptsTableUpdateCompanionBuilder = ConceptsCompanion Function({
+  Value<String> id,
+  Value<String> title,
+  Value<String> prereqIdsJson,
+  Value<double> mastery,
+  Value<int> rowid,
+});
+
+class $$ConceptsTableTableManager extends RootTableManager<
+    _$LocalDb,
+    $ConceptsTable,
+    ConceptRow,
+    $$ConceptsTableFilterComposer,
+    $$ConceptsTableOrderingComposer,
+    $$ConceptsTableCreateCompanionBuilder,
+    $$ConceptsTableUpdateCompanionBuilder> {
+  $$ConceptsTableTableManager(_$LocalDb db, $ConceptsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$ConceptsTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$ConceptsTableOrderingComposer(ComposerState(db, table)),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> title = const Value.absent(),
+            Value<String> prereqIdsJson = const Value.absent(),
+            Value<double> mastery = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ConceptsCompanion(
+            id: id,
+            title: title,
+            prereqIdsJson: prereqIdsJson,
+            mastery: mastery,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String title,
+            Value<String> prereqIdsJson = const Value.absent(),
+            Value<double> mastery = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              ConceptsCompanion.insert(
+            id: id,
+            title: title,
+            prereqIdsJson: prereqIdsJson,
+            mastery: mastery,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$ConceptsTableFilterComposer
+    extends FilterComposer<_$LocalDb, $ConceptsTable> {
+  $$ConceptsTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get title => $state.composableBuilder(
+      column: $state.table.title,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get prereqIdsJson => $state.composableBuilder(
+      column: $state.table.prereqIdsJson,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<double> get mastery => $state.composableBuilder(
+      column: $state.table.mastery,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$ConceptsTableOrderingComposer
+    extends OrderingComposer<_$LocalDb, $ConceptsTable> {
+  $$ConceptsTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get title => $state.composableBuilder(
+      column: $state.table.title,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get prereqIdsJson => $state.composableBuilder(
+      column: $state.table.prereqIdsJson,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<double> get mastery => $state.composableBuilder(
+      column: $state.table.mastery,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+typedef $$EvidencesTableCreateCompanionBuilder = EvidencesCompanion Function({
+  required String id,
+  required String itemId,
+  required String sourceUri,
+  required String snippet,
+  required String offsetsJson,
+  Value<int> rowid,
+});
+typedef $$EvidencesTableUpdateCompanionBuilder = EvidencesCompanion Function({
+  Value<String> id,
+  Value<String> itemId,
+  Value<String> sourceUri,
+  Value<String> snippet,
+  Value<String> offsetsJson,
+  Value<int> rowid,
+});
+
+class $$EvidencesTableTableManager extends RootTableManager<
+    _$LocalDb,
+    $EvidencesTable,
+    EvidenceRow,
+    $$EvidencesTableFilterComposer,
+    $$EvidencesTableOrderingComposer,
+    $$EvidencesTableCreateCompanionBuilder,
+    $$EvidencesTableUpdateCompanionBuilder> {
+  $$EvidencesTableTableManager(_$LocalDb db, $EvidencesTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          filteringComposer:
+              $$EvidencesTableFilterComposer(ComposerState(db, table)),
+          orderingComposer:
+              $$EvidencesTableOrderingComposer(ComposerState(db, table)),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> itemId = const Value.absent(),
+            Value<String> sourceUri = const Value.absent(),
+            Value<String> snippet = const Value.absent(),
+            Value<String> offsetsJson = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              EvidencesCompanion(
+            id: id,
+            itemId: itemId,
+            sourceUri: sourceUri,
+            snippet: snippet,
+            offsetsJson: offsetsJson,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String itemId,
+            required String sourceUri,
+            required String snippet,
+            required String offsetsJson,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              EvidencesCompanion.insert(
+            id: id,
+            itemId: itemId,
+            sourceUri: sourceUri,
+            snippet: snippet,
+            offsetsJson: offsetsJson,
+            rowid: rowid,
+          ),
+        ));
+}
+
+class $$EvidencesTableFilterComposer
+    extends FilterComposer<_$LocalDb, $EvidencesTable> {
+  $$EvidencesTableFilterComposer(super.$state);
+  ColumnFilters<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get itemId => $state.composableBuilder(
+      column: $state.table.itemId,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get sourceUri => $state.composableBuilder(
+      column: $state.table.sourceUri,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get snippet => $state.composableBuilder(
+      column: $state.table.snippet,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+
+  ColumnFilters<String> get offsetsJson => $state.composableBuilder(
+      column: $state.table.offsetsJson,
+      builder: (column, joinBuilders) =>
+          ColumnFilters(column, joinBuilders: joinBuilders));
+}
+
+class $$EvidencesTableOrderingComposer
+    extends OrderingComposer<_$LocalDb, $EvidencesTable> {
+  $$EvidencesTableOrderingComposer(super.$state);
+  ColumnOrderings<String> get id => $state.composableBuilder(
+      column: $state.table.id,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get itemId => $state.composableBuilder(
+      column: $state.table.itemId,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get sourceUri => $state.composableBuilder(
+      column: $state.table.sourceUri,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get snippet => $state.composableBuilder(
+      column: $state.table.snippet,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+
+  ColumnOrderings<String> get offsetsJson => $state.composableBuilder(
+      column: $state.table.offsetsJson,
+      builder: (column, joinBuilders) =>
+          ColumnOrderings(column, joinBuilders: joinBuilders));
+}
+
+class $LocalDbManager {
+  final _$LocalDb _db;
+  $LocalDbManager(this._db);
+  $$ItemsTableTableManager get items =>
+      $$ItemsTableTableManager(_db, _db.items);
+  $$AttemptsTableTableManager get attempts =>
+      $$AttemptsTableTableManager(_db, _db.attempts);
+  $$ErrorTagsTableTableManager get errorTags =>
+      $$ErrorTagsTableTableManager(_db, _db.errorTags);
+  $$ConceptsTableTableManager get concepts =>
+      $$ConceptsTableTableManager(_db, _db.concepts);
+  $$EvidencesTableTableManager get evidences =>
+      $$EvidencesTableTableManager(_db, _db.evidences);
+}

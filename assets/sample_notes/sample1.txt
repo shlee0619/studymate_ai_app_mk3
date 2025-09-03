@@ -1,0 +1,18 @@
+Spaced repetition is a learning technique that incorporates increasing intervals of time between subsequent review of previously learned material. The spacing effect was first noted by Hermann Ebbinghaus.
+
+The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel.
+
+Newton's second law states that the acceleration of an object is dependent upon two variables: the net force acting upon the object and the mass of the object.
+
+Photosynthesis is a process used by plants and other organisms to convert light energy into chemical energy.
+
+In mathematics, the inequality a < b means that a is less than b. Conversely, a > b means a is greater than b.
+
+Speed is distance over time, typically measured in m/s or km/h.
+
+The mitochondrion is the powerhouse of the cell.
+
+Water boils at 100 degrees Celsius at 1 atm of pressure.
+
+The derivative of sin(x) is cos(x).
+

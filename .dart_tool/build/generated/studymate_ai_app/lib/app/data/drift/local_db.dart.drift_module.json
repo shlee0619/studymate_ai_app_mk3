@@ -1,0 +1,956 @@
+{
+  "elements": {
+    "LocalDb": {
+      "id": {
+        "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "name": "LocalDb"
+      },
+      "declaration": {
+        "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "offset": 2409,
+        "name": "LocalDb"
+      },
+      "references": [
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "items"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "attempts"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "error_tags"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "concepts"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "evidences"
+        }
+      ],
+      "type": "database",
+      "tables": [
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "items"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "attempts"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "error_tags"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "concepts"
+        },
+        {
+          "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+          "name": "evidences"
+        }
+      ],
+      "views": [],
+      "includes": [],
+      "queries": [],
+      "schema_version": 1,
+      "daos": []
+    },
+    "items": {
+      "id": {
+        "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "name": "items"
+      },
+      "declaration": {
+        "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "offset": 288,
+        "name": "Items"
+      },
+      "references": [],
+      "type": "table",
+      "columns": [
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "id",
+          "nameInDart": "id",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 327,
+            "name": "id"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "stem",
+          "nameInDart": "stem",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 360,
+            "name": "stem"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "options_json",
+          "nameInDart": "optionsJson",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 395,
+            "name": "optionsJson"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "int"
+          },
+          "nullable": false,
+          "nameInSql": "answer_index",
+          "nameInDart": "answerIndex",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 436,
+            "name": "answerIndex"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": true,
+          "nameInSql": "concept_id",
+          "nameInDart": "conceptId",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 481,
+            "name": "conceptId"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "double"
+          },
+          "nullable": false,
+          "nameInSql": "difficulty",
+          "nameInDart": "difficulty",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 532,
+            "name": "difficulty"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": {
+            "elements": [
+              "const ",
+              {
+                "lexeme": "Constant",
+                "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+              },
+              "(0.5)"
+            ]
+          },
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": true,
+          "nameInSql": "source_ref",
+          "nameInDart": "sourceRef",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 606,
+            "name": "sourceRef"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "double"
+          },
+          "nullable": false,
+          "nameInSql": "ef",
+          "nameInDart": "ef",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 673,
+            "name": "ef"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": {
+            "elements": [
+              "const ",
+              {
+                "lexeme": "Constant",
+                "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+              },
+              "(2.5)"
+            ]
+          },
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "int"
+          },
+          "nullable": false,
+          "nameInSql": "interval_days",
+          "nameInDart": "intervalDays",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 738,
+            "name": "intervalDays"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": {
+            "elements": [
+              "const ",
+              {
+                "lexeme": "Constant",
+                "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+              },
+              "(0)"
+            ]
+          },
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "int"
+          },
+          "nullable": false,
+          "nameInSql": "reps",
+          "nameInDart": "reps",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 814,
+            "name": "reps"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": {
+            "elements": [
+              "const ",
+              {
+                "lexeme": "Constant",
+                "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+              },
+              "(0)"
+            ]
+          },
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "dateTime"
+          },
+          "nullable": true,
+          "nameInSql": "next_review",
+          "nameInDart": "nextReview",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 887,
+            "name": "nextReview"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        }
+      ],
+      "existing_data_class": null,
+      "table_constraints": [
+        {
+          "type": "primary_key",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "custom_parent_class": null,
+      "fixed_entity_info_name": null,
+      "base_dart_name": "Items",
+      "row_class_name": "ItemRow",
+      "companion_class_name": null,
+      "without_rowid": false,
+      "strict": false,
+      "write_default_constraints": true,
+      "custom_constraints": [],
+      "attached_indices": []
+    },
+    "attempts": {
+      "id": {
+        "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "name": "attempts"
+      },
+      "declaration": {
+        "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "offset": 1014,
+        "name": "Attempts"
+      },
+      "references": [],
+      "type": "table",
+      "columns": [
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "id",
+          "nameInDart": "id",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1056,
+            "name": "id"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "item_id",
+          "nameInDart": "itemId",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1089,
+            "name": "itemId"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "bool"
+          },
+          "nullable": false,
+          "nameInSql": "correct",
+          "nameInDart": "correct",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1126,
+            "name": "correct"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "int"
+          },
+          "nullable": false,
+          "nameInSql": "latency_ms",
+          "nameInDart": "latencyMs",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1166,
+            "name": "latencyMs"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "double"
+          },
+          "nullable": false,
+          "nameInSql": "confidence",
+          "nameInDart": "confidence",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1209,
+            "name": "confidence"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "error_tag_ids_json",
+          "nameInDart": "errorTagIdsJson",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1250,
+            "name": "errorTagIdsJson"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": {
+            "elements": [
+              "const ",
+              {
+                "lexeme": "Constant",
+                "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+              },
+              "('[]')"
+            ]
+          },
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "dateTime"
+          },
+          "nullable": false,
+          "nameInSql": "created_at",
+          "nameInDart": "createdAt",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1334,
+            "name": "createdAt"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        }
+      ],
+      "existing_data_class": null,
+      "table_constraints": [
+        {
+          "type": "primary_key",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "custom_parent_class": null,
+      "fixed_entity_info_name": null,
+      "base_dart_name": "Attempts",
+      "row_class_name": "AttemptRow",
+      "companion_class_name": null,
+      "without_rowid": false,
+      "strict": false,
+      "write_default_constraints": true,
+      "custom_constraints": [],
+      "attached_indices": []
+    },
+    "error_tags": {
+      "id": {
+        "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "name": "error_tags"
+      },
+      "declaration": {
+        "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "offset": 1450,
+        "name": "ErrorTags"
+      },
+      "references": [],
+      "type": "table",
+      "columns": [
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "id",
+          "nameInDart": "id",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1493,
+            "name": "id"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "name",
+          "nameInDart": "name",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1526,
+            "name": "name"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": true,
+          "nameInSql": "pattern",
+          "nameInDart": "pattern",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1561,
+            "name": "pattern"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": true,
+          "nameInSql": "notes",
+          "nameInDart": "notes",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1610,
+            "name": "notes"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        }
+      ],
+      "existing_data_class": null,
+      "table_constraints": [
+        {
+          "type": "primary_key",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "custom_parent_class": null,
+      "fixed_entity_info_name": null,
+      "base_dart_name": "ErrorTags",
+      "row_class_name": "ErrorTagRow",
+      "companion_class_name": null,
+      "without_rowid": false,
+      "strict": false,
+      "write_default_constraints": true,
+      "custom_constraints": [],
+      "attached_indices": []
+    },
+    "concepts": {
+      "id": {
+        "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "name": "concepts"
+      },
+      "declaration": {
+        "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "offset": 1728,
+        "name": "Concepts"
+      },
+      "references": [],
+      "type": "table",
+      "columns": [
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "id",
+          "nameInDart": "id",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1770,
+            "name": "id"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "title",
+          "nameInDart": "title",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1803,
+            "name": "title"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "prereq_ids_json",
+          "nameInDart": "prereqIdsJson",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1839,
+            "name": "prereqIdsJson"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": {
+            "elements": [
+              "const ",
+              {
+                "lexeme": "Constant",
+                "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+              },
+              "('[]')"
+            ]
+          },
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "double"
+          },
+          "nullable": false,
+          "nameInSql": "mastery",
+          "nameInDart": "mastery",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 1917,
+            "name": "mastery"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": {
+            "elements": [
+              "const ",
+              {
+                "lexeme": "Constant",
+                "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+              },
+              "(0.0)"
+            ]
+          },
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        }
+      ],
+      "existing_data_class": null,
+      "table_constraints": [
+        {
+          "type": "primary_key",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "custom_parent_class": null,
+      "fixed_entity_info_name": null,
+      "base_dart_name": "Concepts",
+      "row_class_name": "ConceptRow",
+      "companion_class_name": null,
+      "without_rowid": false,
+      "strict": false,
+      "write_default_constraints": true,
+      "custom_constraints": [],
+      "attached_indices": []
+    },
+    "evidences": {
+      "id": {
+        "library_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "name": "evidences"
+      },
+      "declaration": {
+        "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+        "offset": 2060,
+        "name": "Evidences"
+      },
+      "references": [],
+      "type": "table",
+      "columns": [
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "id",
+          "nameInDart": "id",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 2103,
+            "name": "id"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "item_id",
+          "nameInDart": "itemId",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 2136,
+            "name": "itemId"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "source_uri",
+          "nameInDart": "sourceUri",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 2173,
+            "name": "sourceUri"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "snippet",
+          "nameInDart": "snippet",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 2213,
+            "name": "snippet"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "offsets_json",
+          "nameInDart": "offsetsJson",
+          "declaration": {
+            "source_uri": "package:studymate_ai_app/app/data/drift/local_db.dart",
+            "offset": 2251,
+            "name": "offsetsJson"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        }
+      ],
+      "existing_data_class": null,
+      "table_constraints": [
+        {
+          "type": "primary_key",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "custom_parent_class": null,
+      "fixed_entity_info_name": null,
+      "base_dart_name": "Evidences",
+      "row_class_name": "EvidenceRow",
+      "companion_class_name": null,
+      "without_rowid": false,
+      "strict": false,
+      "write_default_constraints": true,
+      "custom_constraints": [],
+      "attached_indices": []
+    }
+  },
+  "imports": [
+    "package:drift/drift.dart",
+    "package:drift/native.dart",
+    "package:drift_sqflite/drift_sqflite.dart",
+    "package:path_provider/path_provider.dart",
+    "package:path/path.dart"
+  ]
+}

@@ -1,0 +1,129 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$ConceptNodeImpl _$$ConceptNodeImplFromJson(Map<String, dynamic> json) =>
+    _$ConceptNodeImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      prereqIds: (json['prereqIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+      mastery: (json['mastery'] as num?)?.toDouble() ?? 0.0,
+    );
+
+Map<String, dynamic> _$$ConceptNodeImplToJson(_$ConceptNodeImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'prereqIds': instance.prereqIds,
+      'mastery': instance.mastery,
+    };
+
+_$ItemImpl _$$ItemImplFromJson(Map<String, dynamic> json) => _$ItemImpl(
+      id: json['id'] as String,
+      stem: json['stem'] as String,
+      options:
+          (json['options'] as List<dynamic>).map((e) => e as String).toList(),
+      answerIndex: (json['answerIndex'] as num).toInt(),
+      conceptId: json['conceptId'] as String?,
+      difficulty: (json['difficulty'] as num?)?.toDouble() ?? 0.5,
+      sourceRef: json['sourceRef'] as String?,
+    );
+
+Map<String, dynamic> _$$ItemImplToJson(_$ItemImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'stem': instance.stem,
+      'options': instance.options,
+      'answerIndex': instance.answerIndex,
+      'conceptId': instance.conceptId,
+      'difficulty': instance.difficulty,
+      'sourceRef': instance.sourceRef,
+    };
+
+_$AttemptImpl _$$AttemptImplFromJson(Map<String, dynamic> json) =>
+    _$AttemptImpl(
+      id: json['id'] as String,
+      itemId: json['itemId'] as String,
+      correct: json['correct'] as bool,
+      latencyMs: (json['latencyMs'] as num).toInt(),
+      confidence: (json['confidence'] as num).toDouble(),
+      errorTagIds: (json['errorTagIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+      createdAt: DateTime.parse(json['createdAt'] as String),
+    );
+
+Map<String, dynamic> _$$AttemptImplToJson(_$AttemptImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'itemId': instance.itemId,
+      'correct': instance.correct,
+      'latencyMs': instance.latencyMs,
+      'confidence': instance.confidence,
+      'errorTagIds': instance.errorTagIds,
+      'createdAt': instance.createdAt.toIso8601String(),
+    };
+
+_$ErrorTagImpl _$$ErrorTagImplFromJson(Map<String, dynamic> json) =>
+    _$ErrorTagImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      pattern: json['pattern'] as String?,
+      notes: json['notes'] as String?,
+    );
+
+Map<String, dynamic> _$$ErrorTagImplToJson(_$ErrorTagImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'pattern': instance.pattern,
+      'notes': instance.notes,
+    };
+
+_$SessionImpl _$$SessionImplFromJson(Map<String, dynamic> json) =>
+    _$SessionImpl(
+      id: json['id'] as String,
+      start: DateTime.parse(json['start'] as String),
+      end: json['end'] == null ? null : DateTime.parse(json['end'] as String),
+      interventionLog: (json['interventionLog'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+      focusBreaks: (json['focusBreaks'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+    );
+
+Map<String, dynamic> _$$SessionImplToJson(_$SessionImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'start': instance.start.toIso8601String(),
+      'end': instance.end?.toIso8601String(),
+      'interventionLog': instance.interventionLog,
+      'focusBreaks': instance.focusBreaks,
+    };
+
+_$EvidenceImpl _$$EvidenceImplFromJson(Map<String, dynamic> json) =>
+    _$EvidenceImpl(
+      id: json['id'] as String,
+      itemId: json['itemId'] as String,
+      sourceUri: json['sourceUri'] as String,
+      snippet: json['snippet'] as String,
+      offsets: (json['offsets'] as List<dynamic>)
+          .map((e) => (e as num).toInt())
+          .toList(),
+    );
+
+Map<String, dynamic> _$$EvidenceImplToJson(_$EvidenceImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'itemId': instance.itemId,
+      'sourceUri': instance.sourceUri,
+      'snippet': instance.snippet,
+      'offsets': instance.offsets,
+    };
