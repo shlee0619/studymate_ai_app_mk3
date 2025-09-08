@@ -29,6 +29,7 @@
       "devDependencies": [
         "build_runner",
         "drift_dev",
+        "flutter_lints",
         "flutter_test",
         "freezed",
         "golden_toolkit",
@@ -164,6 +165,13 @@
         "watcher",
         "web_socket_channel",
         "yaml"
+      ]
+    },
+    {
+      "name": "flutter_lints",
+      "version": "4.0.0",
+      "dependencies": [
+        "lints"
       ]
     },
     {
@@ -818,6 +826,11 @@
         "watcher",
         "web_socket_channel"
       ]
+    },
+    {
+      "name": "lints",
+      "version": "4.0.0",
+      "dependencies": []
     },
     {
       "name": "vm_service",

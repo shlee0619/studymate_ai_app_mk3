@@ -59,6 +59,12 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12),

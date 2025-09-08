@@ -11,30 +11,31 @@ GoRouter createRouter() => GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (ctx, st) => const AppScaffold(child: LibraryScreen()),
+          builder: (ctx, st) => const AppScaffold(selectedIndex: 0, child: LibraryScreen()),
         ),
         GoRoute(
           path: '/quiz',
-          builder: (ctx, st) => const AppScaffold(child: QuizScreen()),
+          builder: (ctx, st) => const AppScaffold(selectedIndex: 1, child: QuizScreen()),
         ),
         GoRoute(
           path: '/review',
-          builder: (ctx, st) => const AppScaffold(child: ReviewScreen()),
+          builder: (ctx, st) => const AppScaffold(selectedIndex: 2, child: ReviewScreen()),
         ),
         GoRoute(
           path: '/errors',
-          builder: (ctx, st) => const AppScaffold(child: ErrorProfileScreen()),
+          builder: (ctx, st) => const AppScaffold(selectedIndex: 3, child: ErrorProfileScreen()),
         ),
         GoRoute(
           path: '/settings',
-          builder: (ctx, st) => const AppScaffold(child: SettingsScreen()),
+          builder: (ctx, st) => const AppScaffold(selectedIndex: 4, child: SettingsScreen()),
         ),
       ],
     );
 
 class AppScaffold extends StatelessWidget {
   final Widget child;
-  const AppScaffold({super.key, required this.child});
+  final int selectedIndex;
+  const AppScaffold({super.key, required this.child, required this.selectedIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +43,7 @@ class AppScaffold extends StatelessWidget {
       appBar: AppBar(title: const Text('StudyMate AI')),
       body: SafeArea(child: child),
       bottomNavigationBar: NavigationBar(
+        selectedIndex: selectedIndex,
         destinations: const [
           NavigationDestination(icon: Icon(Icons.folder), label: 'Library'),
           NavigationDestination(icon: Icon(Icons.quiz), label: 'Quiz'),
