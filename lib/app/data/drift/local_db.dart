@@ -1,10 +1,5 @@
-import 'dart:io';
-
 import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
-import 'package:drift_sqflite/drift_sqflite.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart' as p;
+import 'connection/connection.dart';
 
 part 'local_db.g.dart';
 
@@ -72,18 +67,7 @@ class Evidences extends Table {
 
 @DriftDatabase(tables: [Items, Attempts, ErrorTags, Concepts, Evidences])
 class LocalDb extends _$LocalDb {
-  LocalDb() : super(_open());
+  LocalDb() : super(openConnection());
   @override
   int get schemaVersion => 1;
-}
-
-QueryExecutor _open() {
-  if (Platform.isIOS || Platform.isAndroid) {
-    return SqfliteQueryExecutor.inDatabaseFolder(path: 'app.db', logStatements: false);
-  }
-  return LazyDatabase(() async {
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File(p.join(dir.path, 'app.db'));
-    return NativeDatabase.createInBackground(file);
-  });
 }
