@@ -53,7 +53,7 @@ class SessionController extends Notifier<AsyncValue<Item?>> {
     state = AsyncValue.data(_current);
   }
 
-  Future<Result<Attempt>> submit(int chosenIndex, double confidence) async {
+  Future<Result<Attempt>> submit(int chosenIndex, double confidence, {List<String> errorTagIds = const []}) async {
     final now = DateTime.now();
     final shown = _shownAt ?? now;
     final latency = now.difference(shown).inMilliseconds;
@@ -65,7 +65,7 @@ class SessionController extends Notifier<AsyncValue<Item?>> {
       correct: correct,
       latencyMs: latency,
       confidence: confidence,
-      errorTagIds: const [],
+      errorTagIds: errorTagIds,
       createdAt: now,
     );
     await repos.attempts.add(att);

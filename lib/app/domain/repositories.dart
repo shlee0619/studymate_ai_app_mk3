@@ -143,6 +143,17 @@ class AttemptRepository {
 class ErrorTagRepository {
   final LocalDb db;
   ErrorTagRepository(this.db);
+  Future<List<ErrorTag>> all() async {
+    final rows = await db.select(db.errorTags).get();
+    return rows
+        .map((r) => ErrorTag(
+              id: r.id,
+              name: r.name,
+              pattern: r.pattern,
+              notes: r.notes,
+            ))
+        .toList();
+  }
   Future<void> upsertAll(List<ErrorTag> tags) async {
     await db.batch((b) {
       b.insertAllOnConflictUpdate(
